@@ -27,29 +27,26 @@ void setup() {
 
   Base.write(180);
   delay(2000);
-  
+ 
 
   //Movimiento del motor derecho
 
 
+  Derecha.write(45);
+  delay(1000);
+
+  Derecha.write(120);
+  delay(1000);
+
   Derecha.write(90);
-  delay(1000);
-
-  Derecha.write(0);
-  delay(1000);
-
-  Derecha.write(80);
   delay(1000);
 
   //Movimiento del motor izquierdo
 
-  Izquierda.write(90);
-  delay(2000);
-
-  Izquierda.write(0);
-  delay(2000);
-
   Izquierda.write(180);
+  delay(2000);
+
+  Izquierda.write(90);
   delay(2000);
 
   //Movimiento del motor de la mano
@@ -62,7 +59,7 @@ void setup() {
 
   Mano.write(180);
   delay(2000);
-  
+ 
 
   
 
