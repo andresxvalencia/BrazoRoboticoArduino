@@ -9,6 +9,7 @@ Servo Base; // Declaro el servomotor de la base
 Servo Derecha; //Declaro el servomotor de la derecha
 Servo Izquierda; //Declaro el servomotor de la izquierda
 Servo Mano; //Declaro el servomotor de la mano
+int i = 0;
 void setup() {
     
   Base.attach(motorBase); //Inicializamos el servo de la base
@@ -18,38 +19,83 @@ void setup() {
 
  
   //Movimiento del motor de la base
+
+ while(i != 90)
+ {
   
-  Base.write(90);
-  delay(2000);
+  Base.write(i);
+  delay(20);
+  i++;
+ }
 
-  Base.write(0);
-  delay(2000);
 
-  Base.write(180);
-  delay(2000);
+ while (i >= 0)
+ {
+
+  Base.write(i);
+  delay(20);
+  i--;
+ }
+
+ while(i != 180)
+ {
+
+  Base.write(i);
+  delay(20);
+  i++;
+ }
+
+ while(i != 90)
+ {
+
+  Base.write(i);
+  delay(20);
+  i--;
+ }
  
 
   //Movimiento del motor derecho
-
-
-  Derecha.write(45);
-  delay(1000);
-
-  Derecha.write(120);
-  delay(1000);
-
-  Derecha.write(90);
-  delay(1000);
-
+  i=90;
+  while(i>=40)
+  {
+  Derecha.write(i);
+  delay(15);
+  i--;
+  }
+  
+  while(i<=140){
+  Derecha.write(i);
+  delay(15);
+  i++;
+  }
+while(i>=90)
+{
+  Derecha.write(i);
+delay(15);
+i--;
+}
   //Movimiento del motor izquierdo
 
-  Izquierda.write(180);
-  delay(2000);
-
-  Izquierda.write(90);
-  delay(2000);
+  i =90;
+  
+  while(i <= 180)
+  {
+  Izquierda.write(i);
+  delay(20);
+  i++;
+  }
+  
+  i=180;
+  while(i >= 90 )
+  {
+  Izquierda.write(i);
+  delay(20);
+  i--;
+  }
+  
 
   //Movimiento del motor de la mano
+  
 
   Mano.write(90);
   delay(2000);
