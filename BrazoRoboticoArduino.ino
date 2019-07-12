@@ -46,8 +46,8 @@ int automatico = 0;
  
 void setup() {  
   
-  Serial.begin(9600);
-  miBT.begin(38400);
+  Serial.begin(9600); //Velocidad de transmisión de la consola
+  miBT.begin(38400); //Velocidad de transmisión del Bluetooh (HC-05)
   Base.attach(motorBase); //Inicializamos el servo de la base
   Derecha.attach(motorDerecha); //Inicializamos el servo de la derecha
   Izquierda.attach(motorIzquierda); //Inicializamos el servo de la izquierda
@@ -66,7 +66,7 @@ void setup() {
   Izquierda.write(140);
   delay(500);
   
-  Mano.write(0);
+  Mano.write(10);
   delay(500);
 
 
@@ -90,7 +90,7 @@ void loop() {
     {
      case 'B':
      
-     Serial.println("Usted ha ingrsado el servo de la base.");
+     Serial.println("Usted ha ingresado el servo de la base.");
 
      if(anguloIngresado >= 0 && anguloIngresado <= 180)
      {
@@ -166,7 +166,7 @@ void loop() {
        Izquierda.write(140);
        delay(500);
   
-       Mano.write(0);
+       Mano.write(10);
        delay(500);
        
      /*Movimiento Automatico*/
@@ -224,6 +224,8 @@ void loop() {
      break;
       
      case 'S':
+
+     Serial.println("Restablecer posiciones de inicio");
      
       Base.write(90);
       delay(500);
@@ -234,7 +236,7 @@ void loop() {
       Izquierda.write(140);
       delay(500);
   
-      Mano.write(0);
+      Mano.write(10);
       delay(500);
       break;
 
